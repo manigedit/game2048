@@ -1,0 +1,115 @@
+#cell {
+  width: 80px;
+  height: 80px;
+  background-color: antiquewhite;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 2px;
+  position: relative;
+  border-radius: 4px;
+  color: transparent;
+}
+
+#cell:not(.empty) {
+  transition: all 0.1s cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+div#cell-value {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 20px;
+  line-height: 32px;
+  height: 30px;
+  margin: auto;
+  text-align: center;
+}
+
+#cell.merged {
+  -webkit-animation: merge 0.2s ease-out normal;
+  animation: merge 0.2s ease-out normal;
+  z-index: 99;
+}
+
+#cell.color-2 {
+  background: #eee4da;
+  color: black;
+}
+
+#cell.color-4 {
+  background: #ede0c8;
+  color: black;
+
+}
+
+#cell.color-8 {
+ color: black;
+  background: #f2b179;
+}
+
+#cell.color-16 {
+  color: black;
+  background: #f59563;
+}
+
+#cell.color-32 {
+  color: black;
+  background: #f67c5f;
+}
+
+#cell.color-64 {
+  color: whitesmoke;
+  background: #f65e3b;
+}
+
+#cell.color-128 {
+  color: whitesmoke;
+  background: #edcf72;
+}
+
+#cell.color-256 {
+  color: whitesmoke;
+  background: #edcc61;
+}
+
+#cell.color-512 {
+  color: whitesmoke;
+  background: #edc850;
+}
+
+#cell.color-1024 {
+  color: whitesmoke;
+  background: #edc53f;
+}
+
+#cell.color-2048 {
+  color: whitesmoke;
+  background: #edc22e;
+}
+
+#cell.color-super {
+  color: whitesmoke;
+  background: #3c3a32;
+}
+
+@keyframes merge {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}

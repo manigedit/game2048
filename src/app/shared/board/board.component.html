@@ -1,0 +1,18 @@
+<div id="header">
+  <h3 id="score">Score: {{score !== -1 ? score : 0}}</h3>
+  <button id="new-game-btn" (click)="restart()">Restart</button>
+</div>
+<div id="leader-board">
+  <div>Leader Board</div>
+  <div *ngFor="let score of highScores">{{score !== -1 ? score : 0}}</div>
+</div>
+<div id="board" >
+  <div id="game-over" *ngIf="gameOver">
+    <div id="game-over-body">
+      <h4 *ngIf="!completed">Oops... Game Over!</h4>
+      <h4 *ngIf="completed">Winner!</h4>
+      <button (click)="restart()">Restart Game</button>
+    </div>
+  </div>
+  <app-cell *ngFor="let cell of cells" [cell]="cell" ></app-cell>
+</div>
